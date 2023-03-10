@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="secret-info">This is secret info in event handlers</h2>
+    <input type="text" id="delete-confirm" />
+    <button id="delete-button" disabled>Delete</button>
+
+    <script>
+      document.getElementById("delete-button").addEventListener("click", function () {
+        document.getElementById("secret-info").style.display = "none";
+      });
+      // Focus
+      document.getElementById("delete-confirm").addEventListener("focus", function () {
+        document.getElementById("secret-info").style.backgroundColor = "red";
+      });
+      // Blur
+      document.getElementById("delete-confirm").addEventListener("blur", function () {
+        document.getElementById("secret-info").style.backgroundColor = "white";
+      });
+      // keyUp
+      document.getElementById("delete-confirm").addEventListener("keyup", function () {
+        const deleteButton = document.getElementById("delete-button");
+        if (event.target.value == "delete") {
+          deleteButton.removeAttribute("disabled");
+        } else {
+          deleteButton.setAttribute("disabled", true);
+        }
+      });
+      // Change
+      document.getElementById("delete-confirm").addEventListener("change", function (event) {
+        const deleteConfirm = document.getElementById("delete-confirm");
+        console.log(deleteConfirm.value);
+      });
+    </script>
+  </body>
+</html>

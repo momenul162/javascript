@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h2>My website blogs</h2>
+    </header>
+    <main>
+        <section id="blogs" class="blogs">
+            <article class="blog">
+                <h3 id="first-title" class="blog-title">My blog- 1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sapiente deleniti numquam earum labore vel ratione pariatur nobis? Non, voluptatum.</p>
+            </article>
+            <article class="blog">
+                <h3 id="second-title" class="blog-title">My blog- 2</h3>
+                <p>Eveniet repellat distinctio pariatur doloribus! Quibusdam sed nostrum, numquam iste ipsa excepturi minima libero voluptatum dolorem, tempora et illo vero!</p>
+            </article>
+            <article class="blog">
+                <h3 id="third-title" class="blog-title">My blog- 3</h3>
+                <p>Nulla doloremque recusandae accusantium, maxime, ducimus, itaque sunt sapiente consectetur natus quia eos. Non odio voluptates est, pariatur qui distinctio.</p>
+            </article>
+            <article class="blog">
+                <h3 id="fourth-title" class="blog-title">My blog- 4</h3>
+                <p>At sunt, similique commodi impedit, esse ipsa earum vero autem maxime quae quisquam voluptas voluptatum? Nobis dignissimos suscipit animi dolorum!</p>
+            </article>
+        </section>
+    </main>
+    <script>
+        // Explore getElementsByTagName
+      const blogTitle = document.getElementsByTagName('h3');
+      for (const h3 of blogTitle){
+        // console.log(h3.innerText);
+      }
+      const blogText = document.getElementsByTagName('p');
+      for (const p of blogText){
+        // console.log(p.innerText);
+      }
+      // Explore getElementById
+      const firstTitle = document.getElementById('second-title');
+      firstTitle.innerText = 'My opinion';
+      firstTitle.style.backgroundColor = 'salmon';
+      firstTitle.style.color = 'white';
+      firstTitle.style.padding = '10px';
+      firstTitle.style.textAlign = 'center';
+      
+      // Append Article
+      const article = document.createElement('article');
+      article.classList.add('blog');
+      const h3 = document.createElement('h3');
+      h3.innerText = 'My blog-5';
+      h3.classList.add('blog-title');
+      const p = document.createElement('p');
+      p.innerText = 'Nulla doloremque recusandae accusantium, maxime, ducimus, itaque sunt sapiente consectetur natus quia eos. Non odio voluptates est, pariatur qui distinctio.';
+      // Append child of article
+      article.appendChild(h3);
+      article.appendChild(p);
+      //Append child of section
+      const blogSection = document.getElementById('blogs');
+      blogSection.appendChild(article);
+      
+      // Explore getElementsByClassName
+      const blogs = document.getElementsByClassName('blog');
+      for (const blog of blogs){
+        blog.style.border = '2px solid orange';
+        blog.style.borderRadius = '10px';
+        blog.style.margin = '10px';
+        blog.style.padding = '10px';
+      }
+      // Explore quarySelector & quarySelectorAll
+      const blogsTitle = document.querySelectorAll('.blog-title');
+      for (const title of blogsTitle){
+        title.style.textAlign = 'center';
+      }
+      </script>
+</body>
+</html>

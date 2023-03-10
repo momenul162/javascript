@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Most common ways t set event handlers</h2>
+    <p id="text"></p>
+    <button onclick="makeText ()">Update</button>
+    <button id="direct-handle">Update</button>
+    <!-- Different way -->
+    <input type="text" id="name-field">
+    <button id="handle-event">Submit</button>
+    <script>
+        // Most common ways by using function
+        function makeText (){
+            const p = document.getElementById('text');
+            p.innerText = 'This is my massage by event handlers';
+        }
+        // direct event listener
+        document.getElementById('direct-handle').addEventListener('click', function(){
+            const p = document.getElementById('text');
+            p.innerText = 'This is my massage by using direct event listener';
+        })
+        // dirct event listener with input field
+        document.getElementById('handle-event').addEventListener('click', function (){
+        const nameField = document.getElementById('name-field');
+        const p = document.getElementById('text');
+        p.innerText = nameField.value;
+        nameField.value = '';    
+        })
+        function myName(){
+            
+        }
+    </script>
+</body>
+</html>
